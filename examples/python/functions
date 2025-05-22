@@ -1,0 +1,158 @@
+# type 1
+def say_hello():
+    print("hello")
+    print('hi!')
+say_hello()
+
+
+#type 2
+def greet_user(name):
+    print(f"welcome, {name}!")
+    print("welcome", name)
+greet_user("alice")
+
+
+#type 3
+def square(x):
+    return x*x
+print(square(5))
+
+
+#type 4
+def greet_user(name="George"):
+    print(f"Hello {name}")
+greet_user()
+greet_user('bob')
+
+# type 5
+def math_operations(a, b):
+    return a + b, a - b, a * b, a / b
+
+add, sub, mul, div = math_operations(10, 2)
+print(add, sub, mul, div)
+
+
+#type 6
+def total_sum(*numbers):
+    print(sum(numbers))
+
+total_sum(1, 2, 3)
+total_sum(10, 20)
+
+
+#type 7
+def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+show_info(name="Alice", age=25, city="Paris")
+show_info(name='joy', age=20, city='atlanta')
+
+#type 8
+def square(x):
+    return x * x
+
+def display_result(y):
+    result = square(y)
+    print("Result:", result)
+
+display_result(6)
+
+
+#factorial
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n - 1)
+
+print(fact(5))
+
+
+# reverse number
+def rev(n):
+    if n<0:
+        return -rev(-n)
+    new = 0
+    while n>0:
+        rem=n%10
+        new = new*10+rem
+        n = n//10
+    return new
+
+num=(-5467)
+print('reverse number is ', rev(num))
+
+
+#lambda function
+add = lambda x, y: x + y
+print(add(5, 3)) 
+
+
+#function with type hints
+def greet(name: str, age: int) ->str :
+    return f"{name} is {age} years old."
+
+print(greet("Tom", 28))
+
+
+#Function Inside a Function (Nested Functions)
+def outer():
+    print("Outer function")
+
+    def inner():
+        print("Inner function")
+
+    inner()
+
+outer()
+
+
+#Function with a List as Argument
+def print_names(names):
+    for name in names:
+        print(f"Hello, {name}")
+
+print_names(["Alice", "Bob", "Charlie"])
+
+
+#Function Returning a List
+def even_numbers(n):
+    return [i for i in range(n) if i % 2 == 0]
+
+print(even_numbers(10))
+
+
+#odd numbers
+def odd_numbers(n):
+    return[i for i in range(n) if i%2 !=0]
+print(odd_numbers(20))
+
+
+# Function Returning Another Function (Closure)
+def multiplier(factor):
+    def multiply(n):
+        return n * factor
+    return multiply
+
+double = multiplier(2)
+print(double(5)) 
+
+#Using Functions as Arguments
+def apply_function(f, value):
+    return f(value)
+
+def square(n):
+    return n * n
+
+print(apply_function(square, 6)) 
+
+
+#Generator Function (Using yield)
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for i in countdown(5):
+    print(i)
