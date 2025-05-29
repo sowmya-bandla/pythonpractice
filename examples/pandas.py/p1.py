@@ -27,4 +27,16 @@ print('==============')
 d=[{'a':10,'b':20},{'a':30,'c':40},{'d':50,'b':60}]
 df=pd.DataFrame(d)
 print(df)
+print('==============')
+
+import numpy as np
+d3 =pd.DataFrame(np.random.randint(10,50,(4,4)),
+columns=['a','b', 'c', 'd'],
+index=['a1', 'a2', 'a3', 'a4'])
+print(d3)
+print('==============')
+
+z=np.ones(3, dtype=[('a', 'i4'), ('b', 'f4')])
+d4=pd.DataFrame(z)
+print(d4)
 
